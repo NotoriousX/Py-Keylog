@@ -13,5 +13,32 @@ This keylogger is developed with the intension of using it for only for educatio
 ![image](https://github.com/NotoriousX/Py-Keylog/assets/107283754/b55f3902-8207-4003-aab5-5c83547b501e)
 
 
+This script performs several tasks related to setting up an environment for monitoring keyboard input and sending the logged data to a Discord webhook. Here's a breakdown of its functionality:
+
+Importing Modules: The script imports necessary modules such as os, sys, subprocess, shutil, urllib.request, zipfile, requests, pynput, winshell, and win32com.client.
+
+Functions Definitions:
+
+install_pip(): Checks if pip is installed and installs it if not.
+install_python(): Downloads and installs Python if it's not found.
+install_dependencies(): Installs required Python packages using pip.
+send_to_discord_webhook(webhook_url, data): Sends data to a Discord webhook.
+on_press(key): A callback function invoked when a key is pressed. It logs keypresses and sends the logs to Discord when the Enter key is pressed.
+create_startup_shortcut(): Creates a shortcut to the script in the Windows startup folder.
+Main Function (main()):
+
+Sets up a Discord webhook URL for sending key logs.
+Checks for Python and pip installations and installs them if necessary.
+Adds Python's installation directory to the system's PATH environment variable.
+Installs required dependencies.
+Sets up a listener for keyboard events using pynput.
+Starts the listener and waits for key presses.
+After the listener is finished, it creates a shortcut to the script in the Windows startup folder using create_startup_shortcut().
+Script Execution:
+
+If the script is run directly (not imported as a module), it calls the main() function.
+Overall, this script is intended to set up an environment for monitoring keyboard input, sending the logged data to a Discord webhook, and ensuring that the monitoring script starts automatically on Windows startup.
+
+
 
 
